@@ -16,7 +16,7 @@
             <h2 class="text-center">Sign up Form</h2>
             <div class="card" style="width: 400px;padding: 15px;border: 1px solid black;margin-top:30px; ">
                 <div class="card-body">
-                    <form action="/validate" method="POST">
+                    <form action="/validate" method="POST" name="form1" onsubmit="return validateForm()>
                         <input type="text" class="form-control" name="firster" id="firster" placeholder="Enter first name" required>
 
                         <br>
@@ -30,4 +30,19 @@
         </center>
     </div>
 </body>
+
+<script>
+    function validateForm(){
+        let x = document.forms["form1"]["firster"].value;
+        let y = document.forms["form1"]["laster"].value;
+        if (x == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+        if (y == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+    }
+</script>
 </html>
